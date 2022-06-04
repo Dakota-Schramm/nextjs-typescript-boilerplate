@@ -1,0 +1,33 @@
+{{#if withState}}
+import { useState } from 'react';
+{{/if}}
+
+/**
+ * @name {{ pascalCase name }}
+ *
+ * @param {object} props
+ *
+ * @return {React.ReactElement}
+ */
+
+import type { {{ pascalCase name }}Props } from './{{ kebabCase name }}'
+
+const {{ pascalCase name }}: React.FunctionComponent<{{ pascalCase name }}Props> = ({
+  first_name,
+  last_name,
+  onSave,
+}: {{ pascalCase name }}Props) => {
+
+  {{#if withState}}
+  const [name, setName] = useState<{{ pascalCase name }}Props>(
+    {
+      first_name,
+      last_name,
+    }
+  );
+  {{/if}}
+
+  return (
+    <div></div>
+  );
+};
